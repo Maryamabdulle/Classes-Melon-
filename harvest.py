@@ -23,13 +23,18 @@ class MelonType:
         # Fill in the rest
 
     def add_pairing(self, pairing):
-        """Add a food pairing to the instance's pairings list."""
-        #self.paring.append
+        """Add a food pairing to the instance's pairings list.
+        
+            Args:
+                pairing is list of foods to pair the melon with
+        """
+
+        self.pairing = self.pairing.extend(pairing)
         # Fill in the rest
 
     def update_code(self, new_code):
         """Replace the reporting code with the new_code."""
-
+        self.code = new_code
         # Fill in the rest
 
 
@@ -38,12 +43,13 @@ def make_melon_types():
 
     all_melon_types = []
     musk = MelonType("musk", "1998", "green", "True" , "True" ,"Muskmelon")
-    musk.add_pairing ("mint")
+    musk.add_pairing (["mint"])
     all_melon_types.append(musk)
     
     casaba = MelonType("cas", 2003, "orange", False, False, "Casaba")
-    casaba.add_pairing("mint")
-    casaba.add_pairing("strawberries")
+    casaba.add_pairing(["mint", "strawberries"])
+    # casaba.add_pairing("mint")
+    # casaba.add_pairing("strawberries")
     all_melon_types.append(casaba)
     
 
@@ -53,14 +59,10 @@ def make_melon_types():
 
 
     yellow_watermelon = MelonType("yw", 2013, "yellow", False, True, "Yellow Watermelon")
+    yellow_watermelon.add_pairing("ice cream")
+    all_melon_types.append(yellow_watermelon)
     
 
-    
-
-
-
-    
-    
     # Fill in the rest
 
     return all_melon_types
